@@ -1,8 +1,8 @@
 
 from fastapi import APIRouter
-from apis.v1 import ticket
+
+from apis.v1.routes import route_teams
 
 api_router = APIRouter()
-api_router.include_router(ticket.router, prefix="/api/v1")
-# app.include_router(status.router, prefix="/api/v1")
-# app.include_router(ms_teams.router, prefix="/api/v1")
+api_router.include_router(route_teams.router, prefix="/api", tags=["Teams"])
+
